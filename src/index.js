@@ -37,7 +37,7 @@ const createBill = async () => {
 
   const { message, amount, date } = await inquirer.prompt(billQuestions);
 
-  const bill = new Bill("1", message, moment(date), amount);
+  const bill = new Bill(message, moment(date), amount);
   notes.bills.push(bill);
 };
 
@@ -62,7 +62,7 @@ const createEvent = async () => {
 
   const { message, location, date } = await inquirer.prompt(eventQuestions);
 
-  const event = new Event("1", message, moment(date), location);
+  const event = new Event(message, moment(date), location);
   notes.events.push(event);
 };
 
@@ -108,8 +108,7 @@ const prompt = async () => {
   }
 
   if (noteType === "reminder") {
-    // ask bill questions here
-    console.log("ask reminder questions here");
+    console.log("Work in progress");
   }
 
   if (noteType === "none") {

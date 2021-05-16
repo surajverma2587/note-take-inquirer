@@ -1,8 +1,8 @@
 const Note = require("./Note");
 
 class Event extends Note {
-  constructor(id, message, date, location) {
-    super(id, message, date);
+  constructor(message, date, location) {
+    super(message, date);
 
     this.location = location;
   }

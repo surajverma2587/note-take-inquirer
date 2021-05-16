@@ -1,6 +1,8 @@
+const { v4: uuidv4 } = require("uuid");
+
 class Note {
-  constructor(id, message, date) {
-    this.id = id;
+  constructor(message, date) {
+    this.id = uuidv4();
     this.message = message;
     this.date = date;
   }

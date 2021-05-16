@@ -1,8 +1,8 @@
 const Note = require("./Note");
 
 class Bill extends Note {
-  constructor(id, message, date, amount) {
-    super(id, message, date);
+  constructor(message, date, amount) {
+    super(message, date);
 
     this.amount = amount;
   }
