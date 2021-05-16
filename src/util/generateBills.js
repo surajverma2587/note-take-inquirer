@@ -10,7 +10,6 @@ const generateBill = (bill) => {
 
 const generateBills = (bills) => {
   const billCards = bills.map(generateBill).join("\n");
-  console.log(billCards);
   return `<div class="accordion-item">
     <h2 class="accordion-header" id="bills">
       <button

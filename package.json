@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/surajverma2587/note-take-inquirer#readme",
   "dependencies": {
-    "inquirer": "^8.0.0"
+    "inquirer": "^8.0.0",
+    "inquirer-datepicker": "^2.0.0",
+    "moment": "^2.29.1"
   }
 }
