@@ -1,8 +1,10 @@
 const inquirer = require("inquirer");
+const moment = require("moment");
 
 inquirer.registerPrompt("datepicker", require("inquirer-datepicker"));
 
 const Bill = require("./lib/Bill");
+const Event = require("./lib/Event");
 const generateMarkup = require("./util/generateMarkup");
 const writeToFile = require("./util/writeToFile");
 
@@ -35,8 +37,33 @@ const createBill = async () => {
 
   const { message, amount, date } = await inquirer.prompt(billQuestions);
 
-  const bill = new Bill("1", message, date, amount);
+  const bill = new Bill("1", message, moment(date), amount);
   notes.bills.push(bill);
+};
+
+const createEvent = async () => {
+  const eventQuestions = [
+    {
+      type: "input",
+      message: "What event are you attending?",
+      name: "message",
+    },
+    {
+      type: "input",
+      message: "What is the location of the event?",
+      name: "location",
+    },
+    {
+      type: "datepicker",
+      message: "When is the event scheduled?",
+      name: "date",
+    },
+  ];
+
+  const { message, location, date } = await inquirer.prompt(eventQuestions);
+
+  const event = new Event("1", message, moment(date), location);
+  notes.events.push(event);
 };
 
 const prompt = async () => {
@@ -77,8 +104,7 @@ const prompt = async () => {
   }
 
   if (noteType === "event") {
-    // ask bill questions here
-    console.log("ask event questions here");
+    await createEvent();
   }
 
   if (noteType === "reminder") {

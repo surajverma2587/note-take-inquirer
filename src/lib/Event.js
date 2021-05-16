@@ -1,15 +1,16 @@
 const Note = require("./Note");
 
 class Event extends Note {
-  constructor(id, message, date, time, location) {
+  constructor(id, message, date, location) {
     super(id, message, date);
 
-    this.time = time;
     this.location = location;
   }
 
-  getFormattedTime() {
-    return `Event starts at ${this.time.format("HH:mm:ss")}`;
+  getFormattedDateTime() {
+    return `Event starts at ${this.date.format("HH:mm")} on ${this.date.format(
+      "ddd, Do MMMM, YYYY"
+    )}`;
   }
 
   getFormattedLocation() {

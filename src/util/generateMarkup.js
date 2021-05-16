@@ -1,7 +1,9 @@
 const generateBills = require("./generateBills");
+const generateEvents = require("./generateEvents");
 
 const generateMarkup = (notes) => {
   const billsMarkup = generateBills(notes.bills);
+  const eventsMarkup = generateEvents(notes.events);
 
   return `
   <!DOCTYPE html>
@@ -39,6 +41,7 @@ const generateMarkup = (notes) => {
 
       <div class="accordion" id="notes">
         ${billsMarkup}
+        ${eventsMarkup}
       </div>
 
       <script

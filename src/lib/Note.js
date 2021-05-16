@@ -1,5 +1,3 @@
-const moment = require("moment");
-
 class Note {
   constructor(id, message, date) {
     this.id = id;
@@ -8,7 +6,7 @@ class Note {
   }
 
   getFormattedDate() {
-    return moment(this.date).format("ddd, Do MMMM, YYYY");
+    return this.date.format("ddd, Do MMMM, YYYY");
   }
 }
 
