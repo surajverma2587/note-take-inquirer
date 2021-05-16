@@ -1,0 +1,23 @@
+{
+  "name": "note-take-inquirer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surajverma2587/note-take-inquirer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/surajverma2587/note-take-inquirer/issues"
+  },
+  "homepage": "https://github.com/surajverma2587/note-take-inquirer#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}
